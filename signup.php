@@ -23,7 +23,7 @@
 
         $query = "INSERT INTO `tbl_signup`(`fname`, `lname`, `dob`, `gender`, `email`, `password`, `address`, `regno`) VALUES 
                     ('$fname','$lname','$dob','$gender','$email','$pswd','$addr','$regno')"; 
-        $checkUserExist_query = "SELECT * FROM `tbl_signup` WHERE `regno`='' AND `email`=''";
+        $checkUserExist_query = "SELECT * FROM `tbl_signup` WHERE `regno`='$regno' AND `email`='$email'";
         $checkUserExist_result = mysqli_query($conn,$checkUserExist_query);
         if(mysqli_num_rows($checkUserExist_result)>0) {
             echo "<p class='error-msg'>User already exist</p>";
